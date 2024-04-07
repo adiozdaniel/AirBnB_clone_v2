@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-a Fabric script (based on the file 2-do_deploy_web_static.py) that creates and distributes an archive to your web servers, using the function deploy
+a Fabric script (based on the file 2-do_deploy_web_static.py)
+    that creates and distributes an archive to your web servers,
+    using the function deploy
 """
 import os.path
 from datetime import datetime
@@ -33,9 +35,11 @@ def do_deploy(archive_path):
     """Distributes an archive to a web server!
 
     Args:
-        archive_path (str): The path of the archive to distribute!
+        archive_path (str):
+            The path of the archive to distribute!
     Returns:
-        If the file doesn't exist at archive_path or an error occurs - False! or Otherwise - True!
+        If the file doesn't exist at archive_path or
+        an error occurs - False! or Otherwise - True!
     """
     if os.path.isfile(archive_path) is False:
         return False
