@@ -1,0 +1,86 @@
+/* @font-face {
+	font-family: circular;
+	src: url("fonts/CircularStd-Black.woff");
+	font-weight: normal;
+} */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #b6b2b2;
+  }
+}
+
+*,
+html,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+	font-size: 10px;
+}
+
+body {
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.container {
+	max-width: 100rem;
+	width: 100%;
+	margin: 30px auto;
+	position: relative;
+}
+
+@media (max-width: 810px) {
+	.container {
+		max-width: 76rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		max-width: 70rem;
+	}
+}
+
+@media (max-width: 502px) {
+	.container {
+		max-width: 45rem;
+	}
+}
+
+@media (max-width: 428px) {
+	.container {
+		max-width: 38rem;
+	}
+}
+
+@media (max-width: 414px) {
+	.container {
+		max-width: 36rem;
+	}
+}
+
+@media (max-width: 384px) {
+	.container {
+		max-width: 34rem;
+	}
+}
+
+@media (max-width: 360px) {
+	.container {
+		max-width: 30rem;
+	}
+}
+
+/* @media (max-width: 502px), screen and (orientation: portrait) {
+	.container {
+		max-width: 48rem;
+	}
+}
+*/

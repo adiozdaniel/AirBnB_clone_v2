@@ -1,0 +1,165 @@
+.filters {
+	z-index: 100;
+	color: #fff;
+	height: 7rem;
+	border: #ddd solid 1px;
+	border-radius: 0.4rem;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	text-align: center;
+}
+
+.filters button {
+	font-size: 1.8rem;
+	background-color: #ff5a5f;
+	color: #fff;
+	height: 4.8rem;
+	width: 20%;
+	border: none;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	margin: 1rem;
+	text-transform: capitalize;
+}
+
+.filters button:hover {
+	opacity: 90%;
+}
+
+.filters .locations,
+.filters .amenities {
+	width: 25%;
+	color: #aaa;
+	position: relative;
+	margin-top: .8rem;
+	padding-top: 1rem;
+	z-index: inherit;
+	cursor: pointer;
+}
+
+.filters .amenities {
+	margin-left: -20%;
+}
+
+/* Border after the first element */
+.filters .locations::after {
+	content: "";
+	height: 90%;
+	position: absolute;
+	border-right: #ddd solid 1px;
+	top: -.2rem;
+	left: 108%;
+}
+
+.filters .locations h3,
+.filters .amenities h3 {
+	font-weight: 600;
+	font-size: 1.6rem;
+}
+
+.filters .locations h4,
+.filters .amenities h4 {
+	font-weight: 400;
+	font-size: 1.4rem;
+}
+
+/* popover */
+.popover {
+	border: #ddd solid 1px;
+	visibility: hidden;
+	list-style: none;
+	border-radius: 4px;
+	background-color: #333;
+	color: #fafafa;
+	box-shadow: 0 .025rem .6rem .2rem rgba(0, 0, 0, 0.26);
+	width: 100%;
+	height:max-content;
+}
+
+.locations > ul:before,
+.amenities > ul:before {
+	position: absolute;
+	z-index: inherit;
+	content: "";
+	right: calc(50% - 1rem);
+	top: -1.2rem;
+	border: #ddd solid 1px;
+	border-width: 0 0.5rem 0.5rem 0.5rem;
+	border-color: transparent transparent #ddd transparent;
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+.locations:hover .popover,
+.amenities:hover .popover {
+	visibility: visible;
+	cursor: pointer;
+	letter-spacing: 0.3rem;
+	transform: translate(0%, 27%);
+	transition: all 0.5s cubic-bezier(0.02, -0.3, 0.2, 0.65);
+}
+
+div ul li {
+	margin: 0.5rem;
+	font-size: 1.4rem;
+}
+
+div ul li h2 {
+	font-size: 1.6rem;
+}
+
+@media (max-width: 428px) {
+	.filters {
+		height: max-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.filters .locations::after {
+		display: none;
+	}
+
+	.filters button {
+		font-size: 2.2rem;
+		margin: 2rem;
+		letter-spacing: 0.2rem;
+		width: 70%;
+	}
+
+	.filters .locations,
+	.filters .amenities {
+		width: 80%;
+		max-height: 5rem;
+		margin-left: 0;
+		border-bottom: #ddd;
+		letter-spacing: 0.2rem;
+	}
+
+	.filters .amenities {
+		z-index: 10;
+	}
+
+	.locations > ul:before,
+	.amenities > ul:before {
+		visibility: hidden;
+	}
+
+	.popover {
+		margin-top: -2.5rem
+	}
+
+	.filters .locations h3,
+	.filters .amenities h3 {
+		font-size: 2rem;
+	}
+
+	.filters .locations h4,
+	.filters .amenities h4 {
+		font-size: 1.8rem;
+	}
+
+}
